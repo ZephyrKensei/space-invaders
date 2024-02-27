@@ -1,14 +1,3 @@
-/* Defaults */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 /* Gameboard */
 .grid {
   width: 300px;
@@ -21,4 +10,21 @@ html {
 .grid div {
   width: 20px;
   height: 20px;
+}
+
+.invader {
+  background-color: purple;
+  border-radius: 10px;
+}
+
+.shooter {
+  background-color: lightblue;
+}
+
+.laser {
+  background-color: orange;
+}
+
+.boom {
+  background-color: red;
 }

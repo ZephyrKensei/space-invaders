@@ -1,6 +1,8 @@
 const grid = document.querySelector('.grid')
 const resultDisplay = document.querySelector('.results')
 const width = 15
+const aliensRemoved = []
+let shooterIndex = 202
 
 // Create squares on board
 for (let i = 0; i < width * width; i++) {
@@ -21,7 +23,24 @@ const alienInvaders = [
 
 function draw() {
   for (let i = 0; i < alienInvaders.length; i++) {
-    squares[alienInvaders[i]].classList.add('invader')
+    if (!aliensRemoved.includes(i)) {
+      squares[alienInvaders[i]].classList.add('invader')
+    }
   }
 }
 draw()
+
+// Adding Shooter and Movement
+squares[shooterIndex].classList.add('shooter')
+
+function moveShooter(e) {
+  squares[shooterIndex].classList.remove('shooter')
+  switch(e.key) {
+    case 'ArrowLeft':
+      if (shooterIndex % width !==0) shooterIndex -=1
+      break
+  }
+  squares[shooterIndex].classList.add('shooter')
+}
+
+document.addEventListener('keydown', moveShooter)
