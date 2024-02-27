@@ -73,10 +73,28 @@ function moveInvaders() {
     }
   }
 
-  for (let i = 0; i < alienInvaders.length; i++) {
-     alienInvaders[i] += direction =
+  if (leftEdge && !isGoingRight) {
+    for (let i = 0; i < alienInvaders.length; i++) {
+      alienInvaders[i] += width - 1
+      direction = 1
+      isGoingRight = true
+    }
   }
-  
+
+  for (let i = 0; i < alienInvaders.length; i++) {
+     alienInvaders[i] += direction
+  }
+
   draw()
+
+  if (squares[shooterIndex].classList.contains('invader')) {
+    resultDisplay.innerHTML = 'GAME OVER'
+    clearInterval(invadersId)    
+  }
+
+  if (aliensRemoved.length === alienInvaders.length) {
+    resultDisplay.innerHTML = 'WINNER"
+    clearInterval(invadersId)    
+  }
 }
 invadersId = setInterval(moveInvaders, 600)
