@@ -25,6 +25,7 @@ h1 {
   border: solid 1px black;
   display: flex;
   flex-wrap: wrap;
+  background: url("https://opengameart.org/sites/default/files/512x512_purple_nebula_1.png");
 }
 
 .grid div {
@@ -33,18 +34,19 @@ h1 {
 }
 
 .invader {
-  background-color: purple;
-  border-radius: 10px;
+  content: image-set("icons/ufo.png");
 }
 
 .shooter {
-  background-color: lightblue;
+  content: image-set("icons/fighter-ship.png");
 }
 
 .laser {
-  background-color: orange;
+  background-color: rgba(0, 255, 255, 0.6);
+  border-radius: 10px;
 }
 
 .boom {
-  background-color: red;
+  background-color: purple;
+  border-radius: 10px;
 }
