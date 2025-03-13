@@ -1,31 +1,38 @@
+@import "https://fonts.googleapis.com/css?family=Press+Start+2P";
+
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: "Kalnia", sans-serif;
   background-color: #e4dfdb;
+  color: #fff;
   user-select: none;
+  background: url("https://opengameart.org/sites/default/files/512x512_purple_nebula_1.png");
 }
 
 .container {
   display: flex;
   flex-direction: column;
   max-width: 320px;
-  margin: 30px auto;
-}
-
-h1 {
+  margin: 0px auto;
+  flex-wrap: nowrap;
+  align-items: center;
   text-align: center;
 }
 
-/* Gameboard */
+h1 {
+  font-size: 5vmin;
+  font-family: "Press Start 2P", sans-serif;
+ }
+
+/* Game board */
 .grid {
   width: 300px;
   height: 300px;
-  border: solid 1px black;
+  border: solid 4px #fff;
   display: flex;
   flex-wrap: wrap;
-  background: url("https://opengameart.org/sites/default/files/512x512_purple_nebula_1.png");
 }
 
 .grid div {
